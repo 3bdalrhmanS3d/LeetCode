@@ -11,8 +11,6 @@ public class Solution
             }
             
         }
-
-
         for(int i = zero; i < nums.Length; i++) { nums[i] = 0; }
     }
 }

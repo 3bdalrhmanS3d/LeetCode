@@ -9,7 +9,7 @@ class Solution {
             x++ ;
         }
         
-        Arrays.parallelSort(nums);
+        Arrays.sort(nums);
         return nums;
 
     }

@@ -7,7 +7,7 @@ public:
         }
 
         int result = 0 ;
-        for(int  i= 2; i <= sqrt(n) ; i++)
+        for(int  i= 2; i <= n ; i++)
         {
             while( n % i == 0)
             {
@@ -17,10 +17,7 @@ public:
             }
         }
 
-        if( n > 1)
-        {
-            result += n ;
-        }
+        
 
         return result ;
     }

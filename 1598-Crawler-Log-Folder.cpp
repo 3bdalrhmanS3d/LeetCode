@@ -19,14 +19,11 @@ public:
                     cnt = cnt ;
                 }
             }
-            else if ( fol == "./")
-            {
-                cnt = cnt ;
-            }
-            else
+            else if ( fol != "./")
             {
                 cnt++ ;
             }
+            
         }
 
         return cnt ;

@@ -1,28 +1,12 @@
 class Solution {
 public:
     vector<string> topKFrequent(vector<string>& words, int k) {
-        vector< pair<string, int> > vec ;
-        vector<string> vecR ;
-        
-        for(auto i : words )
+        unordered_map<string, int> freq ;
+        for(const auto& i : words)
         {
-            bool found =  false ;
-            for( auto & pair : vec)
-            {
-                if(pair.first == i )
-                {
-                    pair.second++;
-                    found = true;
-                    break;
-                }
-            }
-            
-            if(!found)
-            {
-                vec.push_back({i, 1});
-            }
-
+            freq[i]++;
         }
+        vector<pair<string, int>> vec(freq.begin(), freq.end());
         sort(vec.begin(), vec.end(), [](const pair<string, int>& a, const pair<string, int>& b) {
             if (a.second == b.second) {
                 return a.first < b.first; 
@@ -30,10 +14,13 @@ public:
             return a.second > b.second;
         });
 
-        for( int i = 0; i < k && i < vec.size(); i++)
-        {
-            vecR.push_back( vec[i].first );
+        vector<string> vecR;
+        for (int i = 0; i < k; ++i) {
+            vecR.push_back(vec[i].first);
         }
+
         return vecR;
+
+        
     }
 };

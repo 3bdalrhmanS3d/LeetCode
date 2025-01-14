@@ -15,7 +15,7 @@ public:
         int top = 0, bottom = m - 1, left = 0, right = n - 1;
         ListNode* current = head;
 
-        while (current != nullptr && top <= bottom && left <= right) {
+        while (current ) {
             for (int i = left; i <= right && current != nullptr; ++i) {
                 matrix[top][i] = current->val;
                 current = current->next;

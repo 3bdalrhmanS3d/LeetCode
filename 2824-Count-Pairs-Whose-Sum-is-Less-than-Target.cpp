@@ -1,16 +1,20 @@
 class Solution {
 public:
     int countPairs(vector<int>& n, int t) {
-        
-        int sz= n.size(), cnt =0;
-        for(int i =0; i < sz;i++)
+        sort(n.begin(),n.end());
+        int i =0 , j = n.size() - 1, cnt =0;
+        while(i < j)
         {
-            for(int j = i + 1; j < sz ; j++)
+            int sum = n[i] + n[j] ;
+
+            if(sum < t)
             {
-                if(n[i] + n[j] < t)
-                {
-                    cnt++;
-                }
+                cnt += j - i ;
+                i++;
+            }
+            else
+            {
+                j-- ;
             }
         }
 
